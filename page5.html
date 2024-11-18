@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF with Fade-in Text</title>
+    <style>
+        /* Body styles to center the content */
+        body {
+            display: flex;
+            flex-direction: column;  /* Stack items vertically */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color:black;
+        }
+
+        /* Styling for the GIF */
+        .centered-gif {
+            width: 1200px;   /* Adjust the size of the GIF */
+            height: 900px;   /* Maintain the aspect ratio */
+            cursor: pointer; /* Show a pointer cursor when hovering over the GIF */
+        }
+
+        /* Fade-in effect for the text */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .text-below {
+            margin-top: 20px; /* Space between the GIF and the text */
+            font-size: 50px;  /* Font size */
+            color: white;      /* Text color */
+            font-family: 'Times New Roman', Times, serif, sans-serif; /* Font style */
+            text-align: center; /* Center the text */
+            animation: fadeIn 5s ease-out forwards; /* Apply the fade-in effect */
+            opacity: 0; /* Start with the text invisible */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Wrap the GIF inside an anchor tag to make it clickable -->
+    <a href="page6.html">
+        <img src="Untitled_Artwork.gif" alt="Clickable GIF" class="centered-gif">
+    </a>
+
+    <!-- Text below the GIF -->
+    <p class="text-below">THE CRYPTEX CODE</p>
+
+</body>
+</html>
+
+</body>
+</html>
+</body>
+</html>

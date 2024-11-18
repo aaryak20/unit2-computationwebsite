@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom and Fade Effect</title>
+    <style>
+        /* General page styles */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrollbars */
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+        }
+
+        /* Container for images and text */
+        .container {
+            position: relative;
+            width: 1000px;
+            height: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* First image: zoom in */
+        .image1 {
+            position: absolute;
+            width: 1000px;
+            height: 900px;
+            object-fit: cover;
+            animation: zoomIn 6s forwards; /* Zoom in effect for 6 seconds */
+        }
+
+        /* Second image: fades in and fades out */
+        .image2 {
+            position: absolute;
+            width: 1000px;
+            height: 900px;
+            object-fit: cover;
+            opacity: 0;
+            animation: fadeInOut 5s forwards;
+            animation-delay: 3s; /* Starts after the first image zoom is done */
+        }
+
+        /* Text that fades in */
+        .text {
+            position: absolute;
+            color: red;
+            font-size: 40px;
+            opacity: 0;
+            animation: fadeTextIn 6s forwards;
+            animation-delay: 4s; /* Text fades in as the second image starts fading out */
+        }
+
+        /* Zoom-in animation */
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5); /* Zoom into the image */
+                opacity: 0; /* Fade out the first image */
+            }
+        }
+
+        /* Fade-in and fade-out animation for the second image */
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1; /* Fade in */
+            }
+            100% {
+                opacity: 0; /* Fade out */
+            }
+        }
+
+        /* Text fade-in animation */
+        @keyframes fadeTextIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body onclick="window.location.href='index.html'">
+    <div class="container">
+        <!-- First image: zooms in -->
+        <img src="istockphoto-1346407134-612x612.jpg" alt="First Image" class="image1">
+
+        <!-- Second image: fades in and fades out -->
+        <img src="3093254101_d037b99013_c.jpg.webp" alt="Second Image" class="image2">
+
+        <!-- Text that fades in -->
+        <div class="text"> where the <i><b>BLOODLINE</b></i> rests... </div>
+    </div>
+</body>
+</html>

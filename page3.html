@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Next Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <title>Unlock Button</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            opacity: 0.5;
+            pointer-events: none; /* Make the button unclickable initially */
+        }
+
+        button:enabled {
+            opacity: 1;
+            pointer-events: auto; /* Make the button clickable once enabled */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Enter the following <b>Fibonacci sequence</b> to unlock the next page:</h2>
+            <h3>13,3,21,2</h3>
+    
+        
+        <!-- Input field for the answer -->
+        <input type="text" id="answer" placeholder="Enter your answer" oninput="checkAnswer()">
+        
+        <!-- Button that links to the next page (initially disabled) -->
+        <button id="nextPageButton" onclick="goToNextPage()" disabled>Go to Next Page</button>
+    </div>
+
+    <script>
+        // Function to check if the answer is correct
+        function checkAnswer() {
+            var answer = document.getElementById("answer").value;  // Get the user's input
+            var button = document.getElementById("nextPageButton"); // Get the button element
+            
+            // Check if the answer is correct (in this case, 12 is the correct answer)
+            if (answer === "13,3,21,2") {
+                button.disabled = false; // Enable the button if the answer is correct
+            } else {
+                button.disabled = true; // Keep the button disabled if the answer is incorrect
+            }
+        }
+
+        // Function to go to the next page when the button is clicked
+        function goToNextPage() {
+            window.location.href = "page4.html";  // Redirect to the next page
+        }
+    </script>
+
+</body>
+</html>
+
+<img src="Fibonacci_spiral.png">
+</body>
+</html>
+
+</html>
